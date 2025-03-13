@@ -1,12 +1,12 @@
 import React from "react";
 
 
-const Filho = ({ char, calculate, handleClick }) => {
+const Filho = ({ char, calculadora, handleClick }) => {
     return(
         <button
             key={char}
             className={["/", "*", "-", "+", "="].includes(char) ? "operator" : ""}
-            onClick={() => (char === "=" ? calculate() : handleClick(char))}
+            onClick={() => (char === "=" ? calculadora() : handleClick(char))}
           >
             {char}
           </button>

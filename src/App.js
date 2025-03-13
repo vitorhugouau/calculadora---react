@@ -7,8 +7,8 @@ function App() {
 
   const handleClick = (value) => setInput((prev) => prev + value);
 
-  const calculate = () => {
-    setInput(String(calculateExpression(input)));
+  const calculadora = () => {
+    setInput(String(calculadoraExpression(input)));
   };
 
   const limpar = () => setInput("");
@@ -18,7 +18,7 @@ function App() {
       <input className="display" value={input} readOnly />
       <div className="buttons">
         {["7", "8", "9", "/", "4", "5", "6", "*", "1", "2", "3", "-", "0", ".", "=", "+"].map((char) => (
-          <Filho char={char} calculate={calculate} handleClick={handleClick}/>
+          <Filho char={char} calculadora={calculadora} handleClick={handleClick}/>
         ))}
         <button className="limpar" onClick={limpar}>C</button>
       </div>
@@ -26,7 +26,7 @@ function App() {
   );
 }
 
-function calculateExpression(expression) {
+function calculadoraExpression(expression) {
   const result = eval(expression);
   return Number.isFinite(result) ? result : "Erro";
 }
